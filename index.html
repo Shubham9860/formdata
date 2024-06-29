@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topic Input Form</title>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+      }
+      form {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      select, input[type="number"] {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      button[type="button"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="button"]:hover {
+        background-color: #3e8e41;
+      }
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="https://sheetdb.io/api/v1/cz40ka1ikljyl"
+      method='post'
+    >
+      <div id="topics">
+        <div>
+          <label for="topic">Topic:</label>
+          <select name="data[topic]">
+            <option value="topic">Select a topic</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Math">Math</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+          </select>
+
+          <label for="difficulty">Select Difficulty Level:</label>
+          <select name="data[difficulty]">
+            <option value="difficulty">Select Difficulty</option>
+            <option value="Basic">Basic</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+          <label for="questions">Number of Questions:</label>
+          <input type="number" name="data[questions]" min="1" value="1" />
+          <label for="Duration">Duration:</label>
+          <input type="number" name="data[duration]" min="5" value="5" />
+        </div>
+      </div>
+      <button type="button" onclick="addtopic()">
+        Add Topic
+      </button>
+      <input type="submit" value="Submit" style="margin: 8px" />
+    </form>
+
+    <script>
+      function addtopic() {
+        const topicDiv = document.getElementById("topics");
+        const newTopicDiv = document.createElement("div");
+        newTopicDiv.innerHTML = topicDiv.children[0].innerHTML;
+        topicDiv.appendChild(newTopicDiv);
+      }  
+      //let form = document.querySelector("form")
+       // form.addEventListener('submit',(e)=>{
+       //   e.preventDefault();
+        //  let data =new FormData(form);
+        //  fetch('https://sheetdb.io/api/v1/cz40ka1ikljyl'{
+         //   method:"POST",
+         //   body:data
+         // })
+      // .then(res=> res.text())
+     //  .then(data=> console.log(data));
+     //   }
+     // )//
+     
+    </script>
+  </body>
+</html>
